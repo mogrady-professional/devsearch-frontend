@@ -5,7 +5,7 @@ const projectsURL = "https://devsearch-ie.herokuapp.com/api/projects/"; // Endpo
 //const projectURL = "http://127.0.0.1:8000/projects/project/"; // local
 const projectURL = "https://devsearch-frontend.herokuapp.com/projects/project/"; // Production
 //const profilesURL = "http://127.0.0.1:8000"; // local
-const profilesURL = "https://devsearch-frontend.herokuapp.com"; // Production
+const profilesURL = "https://devsearchbucket1544.s3.amazonaws.com/profiles/"; // Production
 //const login = "http://127.0.0.1:5500/frontend/home.html"; // local
 const login = "https://devsearch-frontend.herokuapp.com/home.html"; // Production
 
@@ -61,9 +61,9 @@ let buildProjects = (projects) => {
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">${project.title}</h4>
                 </div>
-                <img class="card-img-top" src="${baseURL}${
-        project.featured_image
-      }" alt="${project.title}" />
+                <img class="card-img-top" src="${
+                  project.featured_image
+                }" alt="${project.title}" />
                 <div class="card-body">
                     <h1 class="card-title pricing-card-title">Votes: 
                     ${project.vote_total}<br><small class="text-muted"><i>${
@@ -73,7 +73,7 @@ let buildProjects = (projects) => {
                     <div>
                     <img
                       class="rounded-circle"
-                      src="${profilesURL}${project.owner.profile_image}"
+                      src="${project.owner.profile_image}"
                       alt="${project.owner.name} Profile image"
                       width="140"
                       height="140"
