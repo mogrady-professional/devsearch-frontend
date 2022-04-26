@@ -1,4 +1,7 @@
-const tokenObtainPairURL = "http://127.0.0.1:8000/api/users/token/";
+//const tokenObtainPairURL = "http://127.0.0.1:8000/api/users/token/"; // local
+const tokenObtainPairURL =
+    "https://devsearch-ie.herokuapp.com/api/users/token/"; // production
+const projectsList = "https://devsearch-ie.herokuapp.com/projects-list.html";
 let form = document.getElementById("login-form");
 let token = localStorage.getItem("token");
 
@@ -25,8 +28,7 @@ form.addEventListener("submit", (e) => {
             console.log("DATA:", data.access);
             if (data.access) {
                 localStorage.setItem("token", data.access);
-                window.location.href =
-                    "http://127.0.0.1:5500/frontend/projects-list.html";
+                window.location.href = projects - list.html;
             } else {
                 alert("Invalid Credentials");
             }

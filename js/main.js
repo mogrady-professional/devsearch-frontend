@@ -1,8 +1,13 @@
-const baseURL = "http://127.0.0.1:8000";
-const projectsURL = "http://127.0.0.1:8000/api/projects/"; // Endpoint for projects api
-const projectURL = "http://127.0.0.1:8000/projects/project/";
-const profilesURL = "http://127.0.0.1:8000";
-const login = "http://127.0.0.1:5500/frontend/home.html";
+//const baseURL = "http://127.0.0.1:8000"; // local
+const baseURL = "https://devsearch-frontend.herokuapp.com"; // Production
+//const projectsURL = "http://127.0.0.1:8000/api/projects/"; // Endpoint for projects api // local
+const projectsURL = "https://devsearch-frontend.herokuapp.com/api/projects/"; // Endpoint for projects api // Production
+//const projectURL = "http://127.0.0.1:8000/projects/project/"; // local
+const projectURL = "https://devsearch-frontend.herokuapp.com/projects/project/"; // Production
+//const profilesURL = "http://127.0.0.1:8000"; // local
+const profilesURL = "https://devsearch-frontend.herokuapp.com"; // Production
+//const login = "http://127.0.0.1:5500/frontend/home.html"; // local
+const login = "https://devsearch-frontend.herokuapp.com/home.html"; // Production
 
 const loginBtn = document.getElementById("login-btn");
 const logoutBtn = document.getElementById("logout-btn");
