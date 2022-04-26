@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="DevSearch - API Login" />
+    <meta name="author" content="Michael O'Grady" />
+    <link rel="icon" href="./img/favicon.ico" />
+
+    <title>DevSearch API — Connect with Developers around the World!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+</head>
+<style type="text/css">
+    html {
+        font-size: 14px;
+    }
+    
+    @media (min-width: 768px) {
+        html {
+            font-size: 16px;
+        }
+    }
+    
+    .container {
+        max-width: 960px;
+    }
+    
+    .pricing-header {
+        max-width: 700px;
+    }
+    
+    .card-deck .card {
+        min-width: 220px;
+    }
+    
+    .border-top {
+        border-top: 1px solid #e5e5e5;
+    }
+    
+    .border-bottom {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .box-shadow {
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+    }
+    
+    body {
+        background-color: #2d2d39;
+    }
+</style>
+
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3"></div>
+
+    <div class="container">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header" style="background-color: #2d2d39">
+                    <img src="./img/logo.svg" width="100%" height="auto" alt="DevSearch" />
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">
+                        <small class="text-muted">Projects List</small>
+                    </h1>
+                    <ul class="list-unstyled mt-3 mb-4"></ul>
+                    <a href="" id="login-btn" type="button" class="btn btn-lg btn-block btn-outline-primary">
+              Log In
+            </a>
+                    <a href="" id="logout-btn" type="button" class="btn btn-lg btn-block btn-outline-primary">
+              Log Out
+            </a>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="projects--wrapper"></div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
