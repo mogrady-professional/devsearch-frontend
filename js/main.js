@@ -1,13 +1,13 @@
 //const baseURL = "http://127.0.0.1:8000"; // local
-const baseURL = "https://devsearch-frontend.herokuapp.com"; // Production
+const baseURL = "https://devsearch-ie.herokuapp.com/"; // Production
 //const projectsURL = "http://127.0.0.1:8000/api/projects/"; // Endpoint for projects api // local
 const projectsURL = "https://devsearch-ie.herokuapp.com/api/projects/"; // Endpoint for projects api // Production
 //const projectURL = "http://127.0.0.1:8000/projects/project/"; // local
-const projectURL = "https://devsearch-frontend.herokuapp.com/projects/project/"; // Production
+const projectURL = "https://devsearch-ie.herokuapp.com/projects/project/"; // Production
 //const profilesURL = "http://127.0.0.1:8000"; // local
 const profilesURL = "https://devsearchbucket1544.s3.amazonaws.com/profiles/"; // Production
 //const login = "http://127.0.0.1:5500/frontend/home.html"; // local
-const login = "https://devsearch-frontend.herokuapp.com/home.html"; // Production
+const login = "https://devsearch-frontend.herokuapp.com/home.html"; // frontend
 
 const loginBtn = document.getElementById("login-btn");
 const logoutBtn = document.getElementById("logout-btn");
@@ -134,7 +134,7 @@ let addVoteEvents = () => {
             let vote = e.target.dataset.vote;
             let project = e.target.dataset.project;
 
-            fetch(`http://127.0.0.1:8000/api/projects/${project}/vote/`, {
+            fetch(`${baseURL}api/projects/${project}/vote/`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
