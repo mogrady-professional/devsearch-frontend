@@ -1,7 +1,8 @@
 //const tokenObtainPairURL = "http://127.0.0.1:8000/api/users/token/"; // local
 const tokenObtainPairURL =
     "https://devsearch-ie.herokuapp.com/api/users/token/"; // production
-const projectsList = "https://devsearch-ie.herokuapp.com/projects-list.html";
+const projectsList =
+    "https://devsearch-frontend.herokuapp.com/projects-list.html";
 let form = document.getElementById("login-form");
 let token = localStorage.getItem("token");
 
