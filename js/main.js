@@ -1,7 +1,7 @@
 //const baseURL = "http://127.0.0.1:8000"; // local
 const baseURL = "https://devsearch-frontend.herokuapp.com"; // Production
 //const projectsURL = "http://127.0.0.1:8000/api/projects/"; // Endpoint for projects api // local
-const projectsURL = "https://devsearch-frontend.herokuapp.com/api/projects/"; // Endpoint for projects api // Production
+const projectsURL = "https://devsearch-ie.herokuapp.com/api/projects/"; // Endpoint for projects api // Production
 //const projectURL = "http://127.0.0.1:8000/projects/project/"; // local
 const projectURL = "https://devsearch-frontend.herokuapp.com/projects/project/"; // Production
 //const profilesURL = "http://127.0.0.1:8000"; // local
