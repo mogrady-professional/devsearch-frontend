@@ -28,7 +28,7 @@ form.addEventListener("submit", (e) => {
             console.log("DATA:", data.access);
             if (data.access) {
                 localStorage.setItem("token", data.access);
-                window.location.href = projects - list.html;
+                window.location.href = projectsList;
             } else {
                 alert("Invalid Credentials");
             }
