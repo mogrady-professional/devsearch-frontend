@@ -13,7 +13,7 @@ form.addEventListener('submit', (e) => {
     username: form.username.value,
     password: form.password.value,
   };
-  // console.log("FORM DATA", formData);
+  console.log('FORM DATA', formData);
 
   // Fetch API -> To recieve a token
   fetch(tokenObtainPairURL, {
