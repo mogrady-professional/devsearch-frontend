@@ -1,9 +1,9 @@
 //const baseURL = "http://127.0.0.1:8000"; // local
-const baseURL = 'https://devsearch-heroku.herokuapp.com//'; // Production
+const baseURL = 'https://devsearch-heroku.herokuapp.com'; // Production
 //const projectsURL = "http://127.0.0.1:8000/api/projects/"; // Endpoint for projects api // local
-const projectsURL = 'https://devsearch-heroku.herokuapp.com//api/projects/'; // Endpoint for projects api // Production
+const projectsURL = 'https://devsearch-heroku.herokuapp.com/api/projects/'; // Endpoint for projects api // Production
 //const projectURL = "http://127.0.0.1:8000/projects/project/"; // local
-const projectURL = 'https://devsearch-heroku.herokuapp.com//projects/project/'; // Production
+const projectURL = 'https://devsearch-heroku.herokuapp.com/projects/project/'; // Production
 //const profilesURL = "http://127.0.0.1:8000"; // local
 const profilesURL = 'https://devsearchbucket1544.s3.amazonaws.com/profiles/'; // Production
 //const login = "http://127.0.0.1:5500/frontend/home.html"; // local

@@ -23,7 +23,7 @@ form.addEventListener('submit', (e) => {
     },
     body: JSON.stringify(formData),
   })
-    .then((response) => response.json(), console.log('RESPONSE', response))
+    .then((response) => response.json())
     .then((data) => {
       console.log('DATA:', data.access);
       if (data.access) {
