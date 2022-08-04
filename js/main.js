@@ -1,61 +1,61 @@
 //const baseURL = "http://127.0.0.1:8000"; // local
-const baseURL = "https://devsearch-ie.herokuapp.com/"; // Production
+const baseURL = 'https://devsearch-heroku.herokuapp.com//'; // Production
 //const projectsURL = "http://127.0.0.1:8000/api/projects/"; // Endpoint for projects api // local
-const projectsURL = "https://devsearch-ie.herokuapp.com/api/projects/"; // Endpoint for projects api // Production
+const projectsURL = 'https://devsearch-heroku.herokuapp.com//api/projects/'; // Endpoint for projects api // Production
 //const projectURL = "http://127.0.0.1:8000/projects/project/"; // local
-const projectURL = "https://devsearch-ie.herokuapp.com/projects/project/"; // Production
+const projectURL = 'https://devsearch-heroku.herokuapp.com//projects/project/'; // Production
 //const profilesURL = "http://127.0.0.1:8000"; // local
-const profilesURL = "https://devsearchbucket1544.s3.amazonaws.com/profiles/"; // Production
+const profilesURL = 'https://devsearchbucket1544.s3.amazonaws.com/profiles/'; // Production
 //const login = "http://127.0.0.1:5500/frontend/home.html"; // local
-const login = "https://devsearch-frontend.herokuapp.com/home.html"; // frontend
+const login = 'http://www.api.devsearch.ie'; // frontend
 
-const loginBtn = document.getElementById("login-btn");
-const logoutBtn = document.getElementById("logout-btn");
-let token = localStorage.getItem("token");
+const loginBtn = document.getElementById('login-btn');
+const logoutBtn = document.getElementById('logout-btn');
+let token = localStorage.getItem('token');
 
-console.log("TOKEN: ", token);
+console.log('TOKEN: ', token);
 
 if (token) {
-    loginBtn.remove(); // Remove login button
-    console.log("Logged in");
+  loginBtn.remove(); // Remove login button
+  console.log('Logged in');
 } else {
-    logoutBtn.remove(); // Remove logout button
-    console.log("Not logged in");
-    window.location.href = login;
+  logoutBtn.remove(); // Remove logout button
+  console.log('Not logged in');
+  window.location.href = login;
 }
 
 // Handle Logout
-logoutBtn.addEventListener("click", (e) => {
-    // e.preventDefault();
-    localStorage.removeItem("token");
-    window.location.href = login;
+logoutBtn.addEventListener('click', (e) => {
+  // e.preventDefault();
+  localStorage.removeItem('token');
+  window.location.href = login;
 });
 
 let getProjects = () => {
-    // Fetch API Request -> GET Request
-    fetch(projectsURL)
-        .then((response) => response.json()) // Convert response to JSON
-        .then((data) => buildProjects(data)) // Log data
-        .catch((error) => console.log(error)); // Log error
+  // Fetch API Request -> GET Request
+  fetch(projectsURL)
+    .then((response) => response.json()) // Convert response to JSON
+    .then((data) => buildProjects(data)) // Log data
+    .catch((error) => console.log(error)); // Log error
 };
 
 // Build Projects
 let buildProjects = (projects) => {
-    console.log(projects);
-    let projectsWrapper = document.getElementById("projects--wrapper");
-    projectsWrapper.innerHTML = ""; // Clear projects
+  console.log(projects);
+  let projectsWrapper = document.getElementById('projects--wrapper');
+  projectsWrapper.innerHTML = ''; // Clear projects
 
-    // Check for empty projects
-    if (projects.length === 0) {
-        projectsWrapper.innerHTML = ` 
+  // Check for empty projects
+  if (projects.length === 0) {
+    projectsWrapper.innerHTML = ` 
         <h3 style="text-align:center;">No Projects Found!</h3>`;
-        return;
-    } else {
-        // console.log("projectsWrapper: ", projectsWrapper);
-        // Loop through projects
-        for (let i = 0; i < projects.length; i++) {
-            let project = projects[i];
-            let projectCad = `
+    return;
+  } else {
+    // console.log("projectsWrapper: ", projectsWrapper);
+    // Loop through projects
+    for (let i = 0; i < projects.length; i++) {
+      let project = projects[i];
+      let projectCad = `
             <div class="card-deck mb-3 text-center">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
@@ -116,40 +116,40 @@ let buildProjects = (projects) => {
             </div>
         </div>  
                 `;
-            projectsWrapper.innerHTML += projectCad;
-        }
+      projectsWrapper.innerHTML += projectCad;
     }
-    // Add event listener to vote buttons
-    addVoteEvents();
-    // let voteBtns = document.getElementsByClassName("vote--option");
+  }
+  // Add event listener to vote buttons
+  addVoteEvents();
+  // let voteBtns = document.getElementsByClassName("vote--option");
 };
 
 let addVoteEvents = () => {
-    let voteBtns = document.getElementsByClassName("vote--option");
+  let voteBtns = document.getElementsByClassName('vote--option');
 
-    for (let i = 0; voteBtns.length > i; i++) {
-        voteBtns[i].addEventListener("click", (e) => {
-            let token = localStorage.getItem("token");
-            console.log("TOKEN:", token);
-            let vote = e.target.dataset.vote;
-            let project = e.target.dataset.project;
+  for (let i = 0; voteBtns.length > i; i++) {
+    voteBtns[i].addEventListener('click', (e) => {
+      let token = localStorage.getItem('token');
+      console.log('TOKEN:', token);
+      let vote = e.target.dataset.vote;
+      let project = e.target.dataset.project;
 
-            fetch(`${baseURL}api/projects/${project}/vote/`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
-                    },
-                    body: JSON.stringify({ value: vote }),
-                })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log("Success:", data);
-                    alert("Vote Successful!");
-                    getProjects();
-                });
+      fetch(`${baseURL}api/projects/${project}/vote/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ value: vote }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Success:', data);
+          alert('Vote Successful!');
+          getProjects();
         });
-    }
+    });
+  }
 };
 
 getProjects();
